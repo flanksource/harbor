@@ -13,7 +13,7 @@ jobs:
         run: |
           echo ::set-output name=VERSIONTAG::${GITHUB_REF#refs/*/}
           echo ::set-output name=PKGVERSIONTAG::${GITHUB_REF#refs/*/}
-      - run: make REGISTRYSERVER=docker.io REGISTRYPROJECTNAME=flanksource REGISTRYUSER=$REGISTRYUSER REGISTRYPASSWORD=$REGISTRYPASSWORD compile build pushimage
+      - run: make REGISTRYSERVER=docker.pkg.github.com REGISTRYPROJECTNAME=flanksource REGISTRYUSER=$REGISTRYUSER REGISTRYPASSWORD=$REGISTRYPASSWORD compile build pushimage
         env:
-          REGISTRYUSER: ${{ secrets.DOCKER_USERNAME }}
-          REGISTRYPASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+          REGISTRYUSER: ${{ github.actor }}
+          REGISTRYPASSWORD: ${{ secrets.GITHUB_TOKEN }}
