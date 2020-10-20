@@ -19,6 +19,7 @@ jobs:
           USER: ${{ github.actor }}
           PASS: ${{ secrets.GITHUB_TOKEN }}
       - run: |
+          export VERSIONTAG=${GITHUB_REF#refs/*/}
           for IMAGE in harbor-core harbor-jobservice; do
             docker tag goharbor/$IMAGE:dev docker.pkg.github.com/flanksource/harbor/$IMAGE:$VERSIONTAG
             docker push  docker.pkg.github.com/flanksource/harbor/$IMAGE:$VERSIONTAG
