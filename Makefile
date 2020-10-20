@@ -73,7 +73,7 @@ CHECKENVCMD=checkenv.sh
 
 # parameters
 REGISTRYSERVER=
-REGISTRYPROJECTNAME=flanksource/harbor
+REGISTRYPROJECTNAME=flanksource/goharbor
 DEVFLAG=true
 NOTARYFLAG=false
 CLAIRFLAG=false
@@ -92,7 +92,7 @@ VERSIONTAG=dev
 # for base docker image tag
 PUSHBASEIMAGE=
 BASEIMAGETAG=dev
-BASEIMAGENAMESPACE=flanksource/harbor
+BASEIMAGENAMESPACE=goharbor
 # for harbor package name
 PKGVERSIONTAG=dev
 
